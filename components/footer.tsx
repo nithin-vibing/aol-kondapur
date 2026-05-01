@@ -6,14 +6,11 @@ export function Footer() {
     <footer className="border-t border-border/50 bg-muted/30">
       <div className="mx-auto max-w-6xl px-4 py-8">
         <div className="flex flex-col items-center gap-4 text-center">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <span className="font-serif text-lg font-semibold text-foreground">
-              {CENTRE.name}
-            </span>
-          </div>
+          <span className="font-serif text-lg font-semibold text-foreground">
+            {CENTRE.name}, {CENTRE.neighbourhood}
+          </span>
           <p className="max-w-md text-sm text-muted-foreground">
-            {CENTRE.neighbourhood}, {CENTRE.city} — Bringing joy, peace, and well-being to the community
-            through ancient wisdom and modern techniques.
+            Improving health and happiness through breath, meditation &amp; yoga programs.
           </p>
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
             <span>Made with</span>

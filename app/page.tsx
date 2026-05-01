@@ -13,7 +13,6 @@ const programs = [
     title: 'Happiness Program',
     description:
       'Learn the world\'s most powerful breathing technique — Sudarshan Kriya™ — practiced by millions worldwide.',
-    details: ['Remove Stress', 'Improve Relationships', 'Boost Immunity', '3hrs/day · 3-day format'],
     accent: 'bg-primary/10 border-primary/20',
     badge: 'Most Popular',
   },
@@ -23,7 +22,6 @@ const programs = [
     title: 'Intuition Program',
     description:
       'World\'s No.1 Intuition Program for Children & Teens, to help your child take charge of their mind.',
-    details: ['Ages 5–18', '₹10,000'],
     accent: 'bg-accent/10 border-accent/20',
     badge: null,
   },
@@ -32,8 +30,7 @@ const programs = [
     label: 'START FREE',
     title: 'Free Session',
     description:
-      'Attend a free introductory session before committing to any program. In person or online. No fees, no obligation — just come and see.',
-    details: ['All ages welcome', 'Free · No commitment', 'Online + In Person'],
+      'Attend a free introductory session before committing to any program. In person or online. No fees, no obligation — just come and experience it yourself.',
     accent: 'bg-green-50 border-green-200',
     badge: 'Free',
   },
@@ -77,23 +74,12 @@ export default function Home() {
                     {p.title}
                   </h3>
 
-                  <p className="mb-5 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
                     {p.description}
                   </p>
 
-                  <div className="mb-5 flex flex-wrap gap-2">
-                    {p.details.map((d) => (
-                      <span
-                        key={d}
-                        className="rounded-full bg-background/80 px-3 py-1 text-xs font-medium text-foreground"
-                      >
-                        {d}
-                      </span>
-                    ))}
-                  </div>
-
                   <div className="flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
-                    View details <ArrowRight className="h-4 w-4" />
+                    See Upcoming Schedule <ArrowRight className="h-4 w-4" />
                   </div>
                 </Link>
               ))}
