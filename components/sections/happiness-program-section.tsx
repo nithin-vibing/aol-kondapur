@@ -3,7 +3,6 @@ import { CENTRE } from '@/config/centre';
 import { BenefitsList } from '@/components/benefits-list';
 import { BatchCard } from '@/components/batch-card';
 import { WhatsAppCTA } from '@/components/whatsapp-cta';
-import { Badge } from '@/components/ui/badge';
 import type { ProgramWithBatches } from '@/lib/types';
 
 interface HappinessProgramSectionProps {
@@ -35,14 +34,6 @@ export function HappinessProgramSection({ program }: HappinessProgramSectionProp
           </h2>
           {program.tagline && (
             <p className="text-lg text-muted-foreground">{program.tagline}</p>
-          )}
-          {program.price && (
-            <div className="mt-3 inline-flex items-center gap-2">
-              <Badge variant="secondary" className="text-base font-semibold">
-                ₹{program.price.toLocaleString('en-IN')}
-              </Badge>
-              <span className="text-sm text-muted-foreground">per participant</span>
-            </div>
           )}
         </div>
 

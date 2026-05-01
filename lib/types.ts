@@ -20,6 +20,8 @@ export interface Batch {
   start_date: string;
   end_date: string | null;
   timing: string | null;
+  timing_weekday: string | null;
+  timing_weekend: string | null;
   language: string;
   mode: string;
   venue: string | null;

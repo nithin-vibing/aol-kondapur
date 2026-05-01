@@ -94,7 +94,6 @@ export function TestimonialsSection({ defaultTab = 'adults' }: TestimonialsSecti
         </Tabs>
 
         <p className="mt-6 text-center text-xs text-muted-foreground">
-          Testimonials are from participants at the Art of Living Kondapur center.
           Results may vary based on participation and practice.
         </p>
       </div>
