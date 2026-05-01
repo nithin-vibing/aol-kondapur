@@ -37,5 +37,5 @@ export const CENTRE = {
 
   // ── Site metadata ──────────────────────────────────────────
   /** Your deployed Vercel URL — used for OG / social preview links */
-  siteUrl: 'https://aol-kondapur.vercel.app',
+  siteUrl: 'https://aol-kondapur.vercel.app', // ← update if you get a custom domain
 } as const;

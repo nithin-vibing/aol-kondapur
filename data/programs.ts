@@ -33,7 +33,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
     ],
     duration: '3 days',
     price: 2500,
-    youtube_video_id: null, // ← Paste your YouTube video ID here, e.g. 'dQw4w9WgXcQ'
+    youtube_video_id: null, // ← Paste Happiness Program YouTube video ID here (just the ID, e.g. 'dQw4w9WgXcQ')
     created_at: '',
     updated_at: '',
     batches: [
@@ -88,7 +88,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
     ],
     duration: '2 days',
     price: 10000,
-    youtube_video_id: 'https://youtu.be/h_bq8gqWxyE?si=9vJXmcfKjVYHu0rW', // ← Paste your YouTube video ID here
+    youtube_video_id: 'h_bq8gqWxyE', // ← just the ID from the YouTube URL, not the full link
     created_at: '',
     updated_at: '',
     batches: [
