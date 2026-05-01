@@ -20,8 +20,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2 shrink-0">
+      <div className="mx-auto flex h-20 max-w-5xl items-center justify-between px-4">
+        <Link href="/" className="flex flex-col items-center gap-0.5 shrink-0">
           <Image
             src="/logo.png"
             alt="The Art of Living"
@@ -30,7 +30,10 @@ export function Header() {
             className="h-10 w-auto object-contain"
             priority
           />
-          <span className="hidden text-sm text-muted-foreground sm:inline font-medium">
+          <span
+            className="block text-[9px] font-semibold uppercase text-muted-foreground text-center tracking-[0.42em] pl-[0.42em]"
+            style={{ width: '96px' }}
+          >
             {CENTRE.neighbourhood}
           </span>
         </Link>

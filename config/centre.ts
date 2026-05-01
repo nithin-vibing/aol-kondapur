@@ -23,9 +23,8 @@ export const CENTRE = {
 
   // ── Location ───────────────────────────────────────────────
   address: [
-    '4th Floor, Lenskart / Tumbledry Building',
-    'Seshadri Marg, Raghavendra Colony',
-    'Kondapur, Hyderabad',
+    '4th Floor, Lenskart Building',
+    'Raghavendra Colony, Kondapur',
   ],
 
   /** Google Maps embed URL — paste from Google Maps → Share → Embed a map */

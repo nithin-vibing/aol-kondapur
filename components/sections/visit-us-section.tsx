@@ -13,17 +13,17 @@ export function VisitUsSection() {
             Come Visit Us
           </p>
           <h2 className="mb-3 font-serif text-3xl font-bold text-foreground sm:text-4xl">
-            {CENTRE.name}
+            {CENTRE.name}, {CENTRE.neighbourhood}
           </h2>
           <p className="text-lg text-muted-foreground">
-            Located in {CENTRE.neighbourhood} — easy to find, welcoming to all.
+            Improving health and happiness through breath, meditation &amp; yoga programs.
           </p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Map */}
-          <Card className="overflow-hidden">
-            <div className="aspect-video w-full bg-muted flex items-center justify-center">
+          <div className="overflow-hidden rounded-xl border">
+            <div className="aspect-video w-full">
               <iframe
                 src={CENTRE.mapEmbedUrl}
                 width="100%"
@@ -36,7 +36,7 @@ export function VisitUsSection() {
                 className="h-full w-full"
               />
             </div>
-          </Card>
+          </div>
 
           {/* Contact info */}
           <Card>

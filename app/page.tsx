@@ -12,8 +12,8 @@ const programs = [
     label: 'FOR ADULTS',
     title: 'Happiness Program',
     description:
-      'Learn the Sudarshan Kriya breathing technique and life skills in a 3-day intensive. Reduce stress, sleep better, and reclaim your energy.',
-    details: ['Ages 18 & above', '₹2,500'],
+      'Learn the world\'s most powerful breathing technique — Sudarshan Kriya™ — practiced by millions worldwide.',
+    details: ['Remove Stress', 'Improve Relationships', 'Boost Immunity', '3hrs/day · 3-day format'],
     accent: 'bg-primary/10 border-primary/20',
     badge: 'Most Popular',
   },
@@ -22,7 +22,7 @@ const programs = [
     label: 'FOR KIDS & TEENS',
     title: 'Intuition Program',
     description:
-      'Unlock your child\'s potential with techniques that improve focus, memory, and confidence. Programs for ages 5–18, online and offline.',
+      'World\'s No.1 Intuition Program for Children & Teens, to help your child take charge of their mind.',
     details: ['Ages 5–18', '₹10,000'],
     accent: 'bg-accent/10 border-accent/20',
     badge: null,
@@ -30,7 +30,7 @@ const programs = [
   {
     href: '/free-intro',
     label: 'START FREE',
-    title: 'Free Intro to Yoga & Meditation',
+    title: 'Free Session',
     description:
       'Attend a free introductory session before committing to any program. In person or online. No fees, no obligation — just come and see.',
     details: ['All ages welcome', 'Free · No commitment', 'Online + In Person'],
@@ -50,12 +50,9 @@ export default function Home() {
         <section className="bg-background py-16 sm:py-20">
           <div className="mx-auto max-w-2xl px-4 lg:max-w-5xl">
             <div className="mb-10 text-center">
-              <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">
-                Our Programs
+              <p className="text-sm font-medium uppercase tracking-widest text-primary">
+                Yoga &amp; Meditation Programs
               </p>
-              <h2 className="font-serif text-3xl font-bold text-foreground sm:text-4xl">
-                For All Age Groups
-              </h2>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-1 lg:grid-cols-3">
