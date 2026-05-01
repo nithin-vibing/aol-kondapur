@@ -88,7 +88,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
     ],
     duration: '2 days',
     price: 10000,
-    youtube_video_id: null, // ← Paste your YouTube video ID here
+    youtube_video_id: 'https://youtu.be/h_bq8gqWxyE?si=9vJXmcfKjVYHu0rW', // ← Paste your YouTube video ID here
     created_at: '',
     updated_at: '',
     batches: [
@@ -134,8 +134,8 @@ export const PROGRAMS: ProgramWithBatches[] = [
         end_date: '2026-05-25',
         timing: '10:00 AM – 1:00 PM',
         language: 'English',
-        mode: 'Online',
-        venue: null,
+        mode: 'Offline',
+        venue: 'Art of Living Kondapur Centre, 4th Floor, Seshadri Marg, Raghavendra Colony',
         registration_link: IP_WHATSAPP('13-18 years, online'),
         is_active: true,
         created_at: '',
