@@ -31,7 +31,7 @@ const parentTestimonials = [
     descriptor: 'Father of Arjun, 13 · Gachibowli',
   },
   {
-    quote: "As a parent you want to give your child every advantage. This program does that. The lifetime app access means they keep practising.",
+    quote: "As a parent you want to give your child every advantage. This program does that — and the techniques they learned, they still use every day.",
     name: 'Meera K.',
     descriptor: 'Mother of twins, 8 years · Hyderabad',
   },

@@ -26,6 +26,15 @@ export function HeroSection() {
           <span className="text-border">·</span>
           <span>80 crore+ lives touched</span>
         </div>
+
+        <div className="mt-8">
+          <a
+            href="#programs"
+            className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-6 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+          >
+            Explore Programs ↓
+          </a>
+        </div>
       </div>
     </section>
   );

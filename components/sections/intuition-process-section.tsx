@@ -36,7 +36,7 @@ interface IntuitionProcessSectionProps {
 }
 
 export function IntuitionProcessSection({ program }: IntuitionProcessSectionProps) {
-  const [activeTab, setActiveTab] = useState<AgeGroup>('All');
+  const [activeTab, setActiveTab] = useState<AgeGroup>('5-8 years');
 
   if (!program) return (
     <section id="intuition-process" className="scroll-mt-20 bg-muted/30 py-16">
@@ -92,10 +92,23 @@ export function IntuitionProcessSection({ program }: IntuitionProcessSectionProp
                 {AGE_GROUPS.map((group) => (
                   <TabsContent key={group} value={group} className="mt-4">
                     {batchesByAge[group].length > 0 ? (
-                      <div className="grid gap-4">
-                        {batchesByAge[group].map((batch) => (
-                          <BatchCard key={batch.id} batch={batch} />
-                        ))}
+                      <div className="space-y-4">
+                        <div className="grid gap-4">
+                          {batchesByAge[group].map((batch) => (
+                            <BatchCard key={batch.id} batch={batch} />
+                          ))}
+                        </div>
+                        <p className="text-center text-sm text-muted-foreground pt-2">
+                          Have questions?{' '}
+                          <a
+                            href={`https://wa.me/${CENTRE.whatsapp}?text=${encodeURIComponent(`Hi! I have a question about the Intuition Program at the ${CENTRE.neighbourhood} center.`)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary underline-offset-4 hover:underline"
+                          >
+                            Chat with us on WhatsApp →
+                          </a>
+                        </p>
                       </div>
                     ) : (
                       <div className="rounded-lg border border-dashed border-border bg-background p-8 text-center">

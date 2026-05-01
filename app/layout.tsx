@@ -10,7 +10,9 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfa
 export const metadata: Metadata = {
   title: `${CENTRE.name} - ${CENTRE.neighbourhood}`,
   description: `Discover inner peace and happiness through SKY Breath Meditation, Intuition Process, and transformative wellness programs at ${CENTRE.name}, ${CENTRE.neighbourhood}, ${CENTRE.city}.`,
-  generator: 'v0.app',
+  openGraph: {
+    images: [{ url: `${CENTRE.siteUrl}/logo.png`, width: 2287, height: 967 }],
+  },
   icons: {
     icon: [
       {

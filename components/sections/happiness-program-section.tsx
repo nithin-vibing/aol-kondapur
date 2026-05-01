@@ -42,10 +42,23 @@ export function HappinessProgramSection({ program }: HappinessProgramSectionProp
           <div className="order-first lg:order-last space-y-4">
             <h3 className="font-semibold text-foreground text-lg">Upcoming Batches</h3>
             {program.batches.length > 0 ? (
-              <div className="grid gap-4">
-                {program.batches.map((batch) => (
-                  <BatchCard key={batch.id} batch={batch} />
-                ))}
+              <div className="space-y-4">
+                <div className="grid gap-4">
+                  {program.batches.map((batch) => (
+                    <BatchCard key={batch.id} batch={batch} />
+                  ))}
+                </div>
+                <p className="text-center text-sm text-muted-foreground pt-2">
+                  Have questions?{' '}
+                  <a
+                    href={`https://wa.me/${CENTRE.whatsapp}?text=${encodeURIComponent(`Hi! I have a question about the Happiness Program at the ${CENTRE.neighbourhood} center.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline-offset-4 hover:underline"
+                  >
+                    Chat with us on WhatsApp →
+                  </a>
+                </p>
               </div>
             ) : (
               <div className="rounded-lg border border-dashed border-border p-8 text-center">
@@ -64,7 +77,7 @@ export function HappinessProgramSection({ program }: HappinessProgramSectionProp
             )}
             {program.benefits && program.benefits.length > 0 && (
               <div className="space-y-3">
-                <h3 className="font-semibold text-foreground">What you'll learn</h3>
+                <h3 className="font-semibold text-foreground">What you'll gain</h3>
                 <BenefitsList benefits={program.benefits} />
               </div>
             )}

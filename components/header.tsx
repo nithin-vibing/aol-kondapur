@@ -11,7 +11,7 @@ import { CENTRE } from '@/config/centre';
 const navLinks = [
   { href: '/happiness-program', label: 'Happiness Program' },
   { href: '/intuition-program', label: 'Intuition Program' },
-  { href: '/free-intro', label: 'Free Intro' },
+  { href: '/free-intro', label: 'Free Session' },
 ];
 
 export function Header() {

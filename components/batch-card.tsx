@@ -1,15 +1,17 @@
 'use client';
 
 import confetti from 'canvas-confetti';
-import { Calendar, Clock, Users } from 'lucide-react';
+import { Calendar, Clock, MapPin, MessageCircle, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { WhatsAppCTA } from '@/components/whatsapp-cta';
 import { CENTRE } from '@/config/centre';
 import type { Batch } from '@/lib/types';
 
 function celebrate(url: string) {
+  // Open the tab synchronously — required for iOS Safari's pop-up blocker.
+  // window.open inside setTimeout is treated as a pop-up and silently blocked.
+  const newTab = window.open('', '_blank');
   confetti({
     particleCount: 120,
     spread: 80,
@@ -18,7 +20,10 @@ function celebrate(url: string) {
     gravity: 1.1,
     scalar: 0.95,
   });
-  setTimeout(() => window.open(url, '_blank'), 1000);
+  setTimeout(() => {
+    if (newTab) newTab.location.href = url;
+    else window.open(url, '_blank');
+  }, 1000);
 }
 
 interface BatchCardProps {
@@ -69,6 +74,12 @@ export function BatchCard({ batch }: BatchCardProps) {
         </div>
 
         <div className="space-y-2 text-sm text-muted-foreground">
+          {batch.mode === 'Offline' && (
+            <div className="flex items-center gap-2">
+              <MapPin className="h-4 w-4 shrink-0 text-primary" />
+              <span>Kondapur Centre</span>
+            </div>
+          )}
           {/* Date range — only shown when no schedule (schedule labels carry dates) */}
           {!hasSchedule && (
             <div className="flex items-center gap-2">
@@ -113,12 +124,13 @@ export function BatchCard({ batch }: BatchCardProps) {
             Register Now
           </Button>
         ) : (
-          <WhatsAppCTA
-            label="Register via WhatsApp"
-            message={fallbackMessage}
-            className="w-full"
+          <Button
+            className="w-full bg-[#25D366] text-white hover:bg-[#1ebe5d]"
             onClick={() => celebrate(`https://wa.me/${CENTRE.whatsapp}?text=${encodeURIComponent(fallbackMessage)}`)}
-          />
+          >
+            <MessageCircle className="mr-2 h-4 w-4" />
+            Register via WhatsApp
+          </Button>
         )}
       </CardFooter>
     </Card>

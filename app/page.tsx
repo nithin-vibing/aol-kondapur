@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react';
 
 const programs = [
   {
-    href: '/happiness-program',
+    href: '/happiness-program#happiness-program',
     label: 'FOR ADULTS',
     title: 'Happiness Program',
     description:
@@ -17,20 +17,20 @@ const programs = [
     badge: 'Most Popular',
   },
   {
-    href: '/intuition-program',
+    href: '/intuition-program#intuition-process',
     label: 'FOR KIDS & TEENS',
     title: 'Intuition Program',
     description:
-      'World\'s No.1 Intuition Program for Children & Teens, to help your child take charge of their mind.',
+      'World\'s No.1 Intuition Program for Children & Teens — helping your child take charge of their mind.',
     accent: 'bg-accent/10 border-accent/20',
-    badge: null,
+    badge: 'Ages 5–18',
   },
   {
     href: '/free-intro',
-    label: 'START FREE',
+    label: 'FREE · NO COMMITMENT',
     title: 'Free Session',
     description:
-      'Attend a free introductory session before committing to any program. In person or online. No fees, no obligation — just come and experience it yourself.',
+      'Attend a free introductory session before committing to any program. No fees, no obligation — just come and experience it yourself.',
     accent: 'bg-green-50 border-green-200',
     badge: 'Free',
   },
@@ -44,7 +44,7 @@ export default function Home() {
         <HeroSection />
 
         {/* Program cards */}
-        <section className="bg-background py-16 sm:py-20">
+        <section id="programs" className="bg-background py-16 sm:py-20">
           <div className="mx-auto max-w-2xl px-4 lg:max-w-5xl">
             <div className="mb-10 text-center">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">

@@ -25,7 +25,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
     name: 'Happiness Program',
     tagline: 'Fix the root cause. Not just the symptoms.',
     description:
-      'A 3-day program where you learn Sudarshan Kriya — a rhythmic breathing technique backed by science. Millions have used it to break free from chronic stress, poor sleep, and low energy. One weekend. A skill you\'ll use for life.',
+      'A 3-day program where you learn Sudarshan Kriya — a powerful rhythmic breathing technique backed by science. Millions have used it to break free from chronic stress, poor sleep, and low energy. One weekend. A skill you\'ll use for life.',
     benefits: [
       'Eliminate stress and anxiety at the root — not just manage it',
       'Sleep deeper, wake up with more energy',
@@ -41,7 +41,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
       {
         id: 'hp-may-2026-0810-630am',
         program_id: 'happiness-program',
-        title: '8th May 6:30 AM Batch',
+        title: 'Morning Batch — 6:30 AM',
         age_group: null,
         start_date: '2026-05-08',
         end_date: '2026-05-10',
@@ -60,7 +60,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
       {
         id: 'hp-may-2026-0810-6pm',
         program_id: 'happiness-program',
-        title: '8th May 6:00 PM Batch',
+        title: 'Evening Batch — 6:00 PM',
         age_group: null,
         start_date: '2026-05-08',
         end_date: '2026-05-10',
@@ -86,7 +86,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
     name: 'Intuition Program',
     tagline: 'The life skills no tuition can teach.',
     description:
-      'A weekend program for children aged 5–18 that builds the inner foundation for everything else — focus, confidence, and the ability to handle pressure. Taught through yoga and breathing techniques designed for young minds in Kondapur.',
+      'A weekend program for children aged 5–18 that builds the inner foundation for everything else — focus, confidence, and the ability to handle pressure. Taught through yoga and breathing techniques designed for young minds.',
     benefits: [
       'Build emotional resilience, grit and inner confidence for life',
       'Sharper focus and concentration in academics and extra-curriculars',
@@ -134,8 +134,6 @@ export const PROGRAMS: ProgramWithBatches[] = [
         timing_weekday: null,
         timing_weekend: null,
         schedule: [
-          { label: 'Module 1 · 20–23 Apr · In Person', timing: '4:30 PM – 6:30 PM' },
-          { label: 'Module 2 · 27–29 Apr · In Person', timing: '5:30 PM – 7:30 PM' },
           { label: 'Module 3 · 06 May · In Person', timing: '5:30 PM – 7:30 PM' },
         ],
         language: 'English',
@@ -157,8 +155,6 @@ export const PROGRAMS: ProgramWithBatches[] = [
         timing_weekday: null,
         timing_weekend: null,
         schedule: [
-          { label: 'Module 1 · 20–23 Apr · In Person', timing: '6:30 PM – 8:30 PM' },
-          { label: 'Module 2 · 27–29 Apr · In Person', timing: '5:30 PM – 7:30 PM' },
           { label: 'Module 3 · 06 May · In Person', timing: '5:30 PM – 7:30 PM' },
         ],
         language: 'English',
