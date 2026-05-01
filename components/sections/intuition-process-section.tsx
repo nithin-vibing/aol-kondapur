@@ -69,9 +69,9 @@ export function IntuitionProcessSection({ program }: IntuitionProcessSectionProp
 
         {/* Age group labels — helps parents identify instantly */}
         <div className="mb-8 flex flex-wrap justify-center gap-2">
-          <Badge variant="outline" className="text-sm">IP Junior — Ages 5–8</Badge>
-          <Badge variant="outline" className="text-sm">IP Kids — Ages 8–13</Badge>
-          <Badge variant="outline" className="text-sm">IP Teens — Ages 13–18</Badge>
+          <Badge variant="outline" className="text-sm">IP Junior: Ages 5 to 8 years</Badge>
+          <Badge variant="outline" className="text-sm">IP Kids: Ages 8 to 13 years</Badge>
+          <Badge variant="outline" className="text-sm">IP Teens: Ages 13 to 18 years</Badge>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
