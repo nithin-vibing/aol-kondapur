@@ -6,6 +6,7 @@ import { YouTubeEmbed } from '@/components/youtube-embed';
 import { BenefitsList } from '@/components/benefits-list';
 import { BatchCard } from '@/components/batch-card';
 import { WhatsAppCTA } from '@/components/whatsapp-cta';
+import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import type { ProgramWithBatches, Batch } from '@/lib/types';
 
