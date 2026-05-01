@@ -33,7 +33,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
     ],
     duration: '3 days',
     price: 2500,
-    youtube_video_id: 'F4S_4jX0ERA?si=gBaSsJdsadTVIAke', // ← Paste Happiness Program YouTube video ID here (just the ID, e.g. 'dQw4w9WgXcQ')
+    youtube_video_id: 'F4S_4jX0ERA', // ← Paste Happiness Program YouTube video ID here (just the ID, e.g. 'dQw4w9WgXcQ')
     created_at: '',
     updated_at: '',
     batches: [
