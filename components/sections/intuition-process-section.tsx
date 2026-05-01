@@ -6,7 +6,6 @@ import { YouTubeEmbed } from '@/components/youtube-embed';
 import { BenefitsList } from '@/components/benefits-list';
 import { BatchCard } from '@/components/batch-card';
 import { WhatsAppCTA } from '@/components/whatsapp-cta';
-import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import type { ProgramWithBatches, Batch } from '@/lib/types';
 
@@ -64,14 +63,6 @@ export function IntuitionProcessSection({ program }: IntuitionProcessSectionProp
           </h2>
           {program.tagline && (
             <p className="text-lg text-muted-foreground">{program.tagline}</p>
-          )}
-          {program.price && (
-            <div className="mt-3 inline-flex items-center gap-2">
-              <Badge variant="secondary" className="text-base font-semibold">
-                ₹{program.price.toLocaleString('en-IN')}
-              </Badge>
-              <span className="text-sm text-muted-foreground">per child · includes lifetime app access</span>
-            </div>
           )}
         </div>
 

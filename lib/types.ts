@@ -22,6 +22,7 @@ export interface Batch {
   timing: string | null;
   timing_weekday: string | null;
   timing_weekend: string | null;
+  schedule: Array<{ label: string; timing: string }> | null;
   language: string;
   mode: string;
   venue: string | null;

@@ -2,6 +2,8 @@ import { Calendar, Clock, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { WhatsAppCTA } from '@/components/whatsapp-cta';
+import { CENTRE } from '@/config/centre';
 import type { Batch } from '@/lib/types';
 
 interface BatchCardProps {
@@ -31,7 +33,12 @@ function formatDateRange(startDate: string, endDate: string | null): string {
 }
 
 export function BatchCard({ batch }: BatchCardProps) {
+  const hasSchedule = batch.schedule && batch.schedule.length > 0;
   const hasWeekdayWeekend = batch.timing_weekday && batch.timing_weekend;
+
+  const fallbackMessage = batch.age_group
+    ? `Hi! I'd like to register my child (${batch.age_group}) for the Intuition Program at the ${CENTRE.neighbourhood} center. Can you share details?`
+    : `Hi! I'd like to register for the Happiness Program at the ${CENTRE.neighbourhood} center. Can you share details?`;
 
   return (
     <Card className="flex flex-col border-border/50 bg-card/80 backdrop-blur-sm transition-shadow hover:shadow-md">
@@ -47,12 +54,28 @@ export function BatchCard({ batch }: BatchCardProps) {
         </div>
 
         <div className="space-y-2 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 shrink-0 text-primary" />
-            <span>{formatDateRange(batch.start_date, batch.end_date)}</span>
-          </div>
+          {/* Date range — only shown when no schedule (schedule labels carry dates) */}
+          {!hasSchedule && (
+            <div className="flex items-center gap-2">
+              <Calendar className="h-4 w-4 shrink-0 text-primary" />
+              <span>{formatDateRange(batch.start_date, batch.end_date)}</span>
+            </div>
+          )}
 
-          {hasWeekdayWeekend ? (
+          {/* Schedule (module/day-by-day breakdown) */}
+          {hasSchedule ? (
+            <div className="flex items-start gap-2">
+              <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <div className="space-y-1">
+                {batch.schedule!.map((item) => (
+                  <div key={item.label} className="flex flex-col">
+                    <span className="font-medium text-foreground text-xs">{item.label}</span>
+                    <span>{item.timing}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : hasWeekdayWeekend ? (
             <div className="flex items-start gap-2">
               <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
               <div className="space-y-0.5">
@@ -77,9 +100,11 @@ export function BatchCard({ batch }: BatchCardProps) {
             </a>
           </Button>
         ) : (
-          <Button variant="secondary" className="w-full" disabled>
-            Coming Soon
-          </Button>
+          <WhatsAppCTA
+            label="Register via WhatsApp"
+            message={fallbackMessage}
+            className="w-full"
+          />
         )}
       </CardFooter>
     </Card>
