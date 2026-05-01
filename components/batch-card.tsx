@@ -18,7 +18,7 @@ function celebrate(url: string) {
     gravity: 1.1,
     scalar: 0.95,
   });
-  setTimeout(() => window.open(url, '_blank'), 1200);
+  setTimeout(() => window.open(url, '_blank'), 1000);
 }
 
 interface BatchCardProps {
