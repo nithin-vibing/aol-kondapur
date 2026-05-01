@@ -66,9 +66,9 @@ export function BatchCard({ batch }: BatchCardProps) {
           {hasSchedule ? (
             <div className="flex items-start gap-2">
               <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <div className="space-y-1">
+              <div className="space-y-3">
                 {batch.schedule!.map((item) => (
-                  <div key={item.label} className="flex flex-col">
+                  <div key={item.label} className="flex flex-col gap-0.5">
                     <span className="font-medium text-foreground text-xs">{item.label}</span>
                     <span>{item.timing}</span>
                   </div>
