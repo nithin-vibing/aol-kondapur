@@ -57,7 +57,7 @@ export default function Home() {
                 <Link
                   key={p.href}
                   href={p.href}
-                  className={`group relative flex flex-col rounded-xl border p-6 transition-shadow hover:shadow-lg ${p.accent}`}
+                  className={`group relative flex flex-col rounded-xl border p-8 transition-shadow hover:shadow-lg ${p.accent}`}
                 >
                   <div className="mb-4 flex items-center justify-between">
                     <span className="text-xs font-semibold uppercase tracking-widest text-primary">
@@ -78,7 +78,7 @@ export default function Home() {
                     {p.description}
                   </p>
 
-                  <div className="flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <div className="mt-6 flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
                     See Upcoming Schedule <ArrowRight className="h-4 w-4" />
                   </div>
                 </Link>
