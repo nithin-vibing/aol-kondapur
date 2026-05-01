@@ -9,7 +9,7 @@ import { WhatsAppCTA } from '@/components/whatsapp-cta';
 import { CENTRE } from '@/config/centre';
 import type { Batch } from '@/lib/types';
 
-function celebrate() {
+function celebrate(url: string) {
   confetti({
     particleCount: 120,
     spread: 80,
@@ -18,6 +18,7 @@ function celebrate() {
     gravity: 1.1,
     scalar: 0.95,
   });
+  setTimeout(() => window.open(url, '_blank'), 1500);
 }
 
 interface BatchCardProps {
@@ -108,17 +109,15 @@ export function BatchCard({ batch }: BatchCardProps) {
 
       <CardFooter className="pt-0">
         {batch.registration_link ? (
-          <Button asChild className="w-full" onClick={celebrate}>
-            <a href={batch.registration_link} target="_blank" rel="noopener noreferrer">
-              Register Now
-            </a>
+          <Button className="w-full" onClick={() => celebrate(batch.registration_link!)}>
+            Register Now
           </Button>
         ) : (
           <WhatsAppCTA
             label="Register via WhatsApp"
             message={fallbackMessage}
             className="w-full"
-            onClick={celebrate}
+            onClick={() => celebrate(`https://wa.me/${CENTRE.whatsapp}?text=${encodeURIComponent(fallbackMessage)}`)}
           />
         )}
       </CardFooter>
