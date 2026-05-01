@@ -7,6 +7,7 @@ interface WhatsAppCTAProps {
   phoneNumber?: string;
   label?: string;
   className?: string;
+  onClick?: () => void;
 }
 
 export function WhatsAppCTA({
@@ -14,6 +15,7 @@ export function WhatsAppCTA({
   phoneNumber = CENTRE.whatsapp,
   label = 'Enquire on WhatsApp',
   className = '',
+  onClick,
 }: WhatsAppCTAProps) {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -21,6 +23,7 @@ export function WhatsAppCTA({
     <Button
       asChild
       className={`bg-[#25D366] text-white hover:bg-[#1ebe5d] ${className}`}
+      onClick={onClick}
     >
       <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
         <MessageCircle className="mr-2 h-4 w-4" />

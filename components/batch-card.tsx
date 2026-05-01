@@ -1,3 +1,6 @@
+'use client';
+
+import confetti from 'canvas-confetti';
 import { Calendar, Clock, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
@@ -5,6 +8,17 @@ import { Badge } from '@/components/ui/badge';
 import { WhatsAppCTA } from '@/components/whatsapp-cta';
 import { CENTRE } from '@/config/centre';
 import type { Batch } from '@/lib/types';
+
+function celebrate() {
+  confetti({
+    particleCount: 120,
+    spread: 80,
+    origin: { x: 0.5, y: 0.65 },
+    colors: ['#E8712A', '#F5A623', '#FFD700', '#FF8C00', '#FFC857', '#FFAA00'],
+    gravity: 1.1,
+    scalar: 0.95,
+  });
+}
 
 interface BatchCardProps {
   batch: Batch;
@@ -94,7 +108,7 @@ export function BatchCard({ batch }: BatchCardProps) {
 
       <CardFooter className="pt-0">
         {batch.registration_link ? (
-          <Button asChild className="w-full">
+          <Button asChild className="w-full" onClick={celebrate}>
             <a href={batch.registration_link} target="_blank" rel="noopener noreferrer">
               Register Now
             </a>
@@ -104,6 +118,7 @@ export function BatchCard({ batch }: BatchCardProps) {
             label="Register via WhatsApp"
             message={fallbackMessage}
             className="w-full"
+            onClick={celebrate}
           />
         )}
       </CardFooter>
