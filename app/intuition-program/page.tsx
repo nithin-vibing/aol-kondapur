@@ -5,6 +5,7 @@ import { IntuitionProcessSection } from '@/components/sections/intuition-process
 import { TestimonialsSection } from '@/components/sections/testimonials-section';
 import { getProgramBySlug } from '@/lib/data';
 import type { Metadata } from 'next';
+import { CENTRE } from '@/config/centre';
 
 export const metadata: Metadata = {
   title: 'Intuition Program for Kids & Teens — Art of Living Kondapur',
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Intuition Program for Kids & Teens — Art of Living Kondapur',
     description: 'Improve your child\'s focus, memory, and confidence. Ages 5–18. Kondapur, Hyderabad.',
-    url: 'https://aol-kondapur.lovable.app/intuition-program',
+    url: `${CENTRE.siteUrl}/intuition-program`,
   },
 };
 

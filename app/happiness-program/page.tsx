@@ -5,6 +5,7 @@ import { HappinessProgramSection } from '@/components/sections/happiness-program
 import { TestimonialsSection } from '@/components/sections/testimonials-section';
 import { getProgramBySlug } from '@/lib/data';
 import type { Metadata } from 'next';
+import { CENTRE } from '@/config/centre';
 
 export const metadata: Metadata = {
   title: 'Happiness Program — Art of Living Kondapur',
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Happiness Program — Art of Living Kondapur',
     description: 'A 3-day program to reduce stress, sleep better, and reclaim your energy. Kondapur, Hyderabad.',
-    url: 'https://aol-kondapur.lovable.app/happiness-program',
+    url: `${CENTRE.siteUrl}/happiness-program`,
   },
 };
 

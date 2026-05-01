@@ -3,15 +3,16 @@ import { Footer } from '@/components/footer';
 import { BackBreadcrumb } from '@/components/back-breadcrumb';
 import { FreeIntroSection } from '@/components/sections/free-intro-section';
 import type { Metadata } from 'next';
+import { CENTRE } from '@/config/centre';
 
 export const metadata: Metadata = {
-  title: 'Free Intro to Yoga & Meditation — Art of Living Kondapur',
+  title: 'Free Session — Art of Living Kondapur',
   description:
-    'Attend a free introductory session on yoga and meditation before committing to any program. In person or online. Art of Living Kondapur, Hyderabad.',
+    'Attend a free introductory session on yoga and meditation before committing to any program. Art of Living Kondapur, Hyderabad.',
   openGraph: {
-    title: 'Free Intro to Yoga & Meditation — Art of Living Kondapur',
-    description: 'Free introductory session — no fees, no commitment. In person or online. Kondapur, Hyderabad.',
-    url: 'https://aol-kondapur.lovable.app/free-intro',
+    title: 'Free Session — Art of Living Kondapur',
+    description: 'Free introductory session — no fees, no commitment. Kondapur, Hyderabad.',
+    url: `${CENTRE.siteUrl}/free-intro`,
   },
 };
 

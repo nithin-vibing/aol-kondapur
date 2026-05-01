@@ -136,7 +136,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
         language: 'English',
         mode: 'Offline',
         venue: 'Art of Living Kondapur Centre, 4th Floor, Seshadri Marg, Raghavendra Colony',
-        registration_link: IP_WHATSAPP('13-18 years, online'),
+        registration_link: IP_WHATSAPP('13-18 years'),
         is_active: true,
         created_at: '',
         updated_at: '',

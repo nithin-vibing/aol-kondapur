@@ -21,7 +21,7 @@ export function Footer() {
             <span>by Art of Living volunteers</span>
           </div>
           <p className="text-xs text-muted-foreground">
-            {new Date().getFullYear()} Art of Living Foundation. All rights reserved.
+            &copy; {new Date().getFullYear()} Art of Living Foundation. All rights reserved.
           </p>
         </div>
       </div>
