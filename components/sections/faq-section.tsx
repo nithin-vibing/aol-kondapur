@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import {
   Accordion,
   AccordionContent,
@@ -7,15 +8,16 @@ import {
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: ReactNode;
 }
 
 interface FAQSectionProps {
   faqs: FAQItem[];
   heading?: string;
+  footer?: ReactNode;
 }
 
-export function FAQSection({ faqs, heading = 'Frequently Asked Questions' }: FAQSectionProps) {
+export function FAQSection({ faqs, heading = 'Frequently Asked Questions', footer }: FAQSectionProps) {
   return (
     <section className="bg-background py-16 sm:py-20">
       <div className="mx-auto max-w-2xl px-4">
@@ -35,6 +37,7 @@ export function FAQSection({ faqs, heading = 'Frequently Asked Questions' }: FAQ
             </AccordionItem>
           ))}
         </Accordion>
+        {footer && <div className="mt-8">{footer}</div>}
       </div>
     </section>
   );
