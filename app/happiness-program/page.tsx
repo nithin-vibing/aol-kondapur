@@ -36,31 +36,23 @@ export default async function HappinessProgramPage() {
         <HappinessProgramSection program={program} />
         <TestimonialsSection defaultTab="adults" />
         <FAQSection
-          heading="Questions About the Happiness Program"
+          heading="I Want To Join But..."
           faqs={[
             {
-              question: 'Do I need any prior experience in yoga or meditation?',
-              answer: 'No prior experience is needed. The Happiness Program is designed for complete beginners. All you need to bring is an open mind and a willingness to try.',
+              question: 'Are there any side-effects to this technique?',
+              answer: 'An undying smile is the only side-effect! 🙂 The Sudarshan Kriya™ is practiced globally by millions of people every day with documented health benefits. It is absolutely safe to practice our techniques. If you have a medical history of asthma, high blood pressure, heart problems, or back pain, we will guide you differently during the session.',
             },
             {
-              question: 'What is Sudarshan Kriya?',
-              answer: 'Sudarshan Kriya (SKY) is a powerful rhythmic breathing technique developed by Gurudev Sri Sri Ravi Shankar. It uses specific natural rhythms of the breath to release stress and bring the mind and body into a relaxed, energised state. Over 60 published studies have validated its benefits.',
+              question: 'Will this practice improve my health?',
+              answer: 'Yes, of course! Regular practice of the Sudarshan Kriya™ is known to improve sleep, boost immunity, and lower stress and depression levels. Be sure to let your teacher know your ailments beforehand so they can give you the best and most customised experience.',
             },
             {
-              question: 'What should I wear and bring to the program?',
-              answer: 'Wear comfortable, loose-fitting clothes suitable for sitting and gentle movement. Bring a yoga mat if you have one — we have some available at the centre too. No special equipment needed.',
+              question: 'Why do you charge fees?',
+              answer: 'Two reasons. First, to ensure you commit your time to the workshop. Second, apart from teaching you essential life skills, your contribution funds many service projects in India — sending 1,20,000+ tribal children to school, reviving 75 rivers, empowering 4,75,000+ rural youth with livelihood skills, and lighting 800+ villages with solar lamps. If you think it\'s not justified, we won\'t object if you wish to pay more. 😉',
             },
             {
-              question: 'Is the program in-person or online?',
-              answer: 'The Happiness Program at our Kondapur centre is in-person. You attend 3 sessions over one weekend at our centre in Raghavendra Colony, Kondapur.',
-            },
-            {
-              question: 'Will I have to continue with a paid subscription after the program?',
-              answer: 'There is no ongoing subscription. You learn the Sudarshan Kriya technique during the program and receive guidance on continuing your daily practice independently at home.',
-            },
-            {
-              question: 'What happens after the program ends?',
-              answer: 'After the program, you are encouraged to practise Sudarshan Kriya daily at home — it takes about 20–30 minutes. You also get access to free follow-up sessions and can join our local community for ongoing support.',
+              question: 'I have no stress. Why should I still join this workshop?',
+              answer: 'If you\'re not stressed, great — you\'re living the best life! But consider this: do you start saving money only when you\'re running out of it? Or start exercising only when you\'ve lost your health? Building inner reserves of resilience now means you\'re prepared for whatever comes. But hey, it\'s your call. You could wait till you are stressed — and this workshop will still be around to help.',
             },
           ]}
         />
