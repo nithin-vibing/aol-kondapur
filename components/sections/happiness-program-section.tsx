@@ -3,6 +3,7 @@ import { CENTRE } from '@/config/centre';
 import { BenefitsList } from '@/components/benefits-list';
 import { BatchCard } from '@/components/batch-card';
 import { WhatsAppCTA } from '@/components/whatsapp-cta';
+import { ConfettiLink } from '@/components/confetti-link';
 import type { ProgramWithBatches } from '@/lib/types';
 
 interface HappinessProgramSectionProps {
@@ -50,14 +51,12 @@ export function HappinessProgramSection({ program }: HappinessProgramSectionProp
                 </div>
                 <p className="text-center text-sm text-muted-foreground pt-2">
                   Have questions?{' '}
-                  <a
+                  <ConfettiLink
                     href={`https://wa.me/${CENTRE.whatsapp}?text=${encodeURIComponent(`Hi! I have a question about the Happiness Program at the ${CENTRE.neighbourhood} center.`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="text-primary underline-offset-4 hover:underline"
                   >
                     Chat with us on WhatsApp →
-                  </a>
+                  </ConfettiLink>
                 </p>
               </div>
             ) : (

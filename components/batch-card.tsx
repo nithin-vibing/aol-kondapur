@@ -1,30 +1,13 @@
 'use client';
 
-import confetti from 'canvas-confetti';
 import { Calendar, Clock, MapPin, MessageCircle, Users } from 'lucide-react';
+import { celebrate } from '@/lib/celebrate';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CENTRE } from '@/config/centre';
 import type { Batch } from '@/lib/types';
 
-function celebrate(url: string) {
-  // Open the tab synchronously — required for iOS Safari's pop-up blocker.
-  // window.open inside setTimeout is treated as a pop-up and silently blocked.
-  const newTab = window.open('', '_blank');
-  confetti({
-    particleCount: 120,
-    spread: 80,
-    origin: { x: 0.5, y: 0.65 },
-    colors: ['#E8712A', '#F5A623', '#FFD700', '#FF8C00', '#FFC857', '#FFAA00'],
-    gravity: 1.1,
-    scalar: 0.95,
-  });
-  setTimeout(() => {
-    if (newTab) newTab.location.href = url;
-    else window.open(url, '_blank');
-  }, 1000);
-}
 
 interface BatchCardProps {
   batch: Batch;

@@ -6,6 +6,7 @@ import { VideoCarousel } from '@/components/video-carousel';
 import { BenefitsList } from '@/components/benefits-list';
 import { BatchCard } from '@/components/batch-card';
 import { WhatsAppCTA } from '@/components/whatsapp-cta';
+import { ConfettiLink } from '@/components/confetti-link';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import type { ProgramWithBatches, Batch } from '@/lib/types';
@@ -100,14 +101,12 @@ export function IntuitionProcessSection({ program }: IntuitionProcessSectionProp
                         </div>
                         <p className="text-center text-sm text-muted-foreground pt-2">
                           Have questions?{' '}
-                          <a
+                          <ConfettiLink
                             href={`https://wa.me/${CENTRE.whatsapp}?text=${encodeURIComponent(`Hi! I have a question about the Intuition Program at the ${CENTRE.neighbourhood} center.`)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             className="text-primary underline-offset-4 hover:underline"
                           >
                             Chat with us on WhatsApp →
-                          </a>
+                          </ConfettiLink>
                         </p>
                       </div>
                     ) : (
