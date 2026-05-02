@@ -15,20 +15,36 @@ export function AboutSection() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-primary/5 to-background py-16 sm:py-20 text-center">
-        <div className="mx-auto max-w-2xl px-4">
-          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
-            About Us
-          </p>
-          <h1 className="mb-4 font-serif text-4xl font-bold text-foreground sm:text-5xl">
-            The Art of Living
-          </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            "Unless we have a stress-free mind and a violence-free society, we cannot achieve world peace."
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            — <a href="https://gurudev.artofliving.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-4">Gurudev Sri Sri Ravi Shankar</a>
-          </p>
+      <section className="bg-gradient-to-b from-primary/5 to-background py-16 sm:py-20">
+        <div className="mx-auto max-w-2xl px-4 lg:max-w-5xl">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            {/* Text — second on mobile, first on desktop */}
+            <div className="order-last text-center lg:order-first lg:text-left">
+              <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
+                About Us
+              </p>
+              <h1 className="mb-4 font-serif text-4xl font-bold text-foreground sm:text-5xl">
+                The Art of Living
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                "Unless we have a stress-free mind and a violence-free society, we cannot achieve world peace."
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                — <a href="https://gurudev.artofliving.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-4">Gurudev Sri Sri Ravi Shankar</a>
+              </p>
+            </div>
+            {/* Photo — first on mobile */}
+            <div className="order-first flex justify-center lg:order-last">
+              <Image
+                src="/gurudev.jpg"
+                alt="Gurudev Sri Sri Ravi Shankar"
+                width={420}
+                height={420}
+                className="rounded-2xl object-cover shadow-lg w-full max-w-[320px] sm:max-w-[400px] lg:max-w-full"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -72,25 +88,12 @@ export function AboutSection() {
       {/* About Gurudev */}
       <section className="bg-background py-16">
         <div className="mx-auto max-w-2xl px-4 lg:max-w-3xl">
-          <div className="mb-8 flex flex-col items-center gap-6 sm:flex-row sm:items-start">
-            <div className="shrink-0">
-              <Image
-                src="/gurudev.jpg"
-                alt="Gurudev Sri Sri Ravi Shankar"
-                width={200}
-                height={200}
-                className="rounded-2xl object-cover shadow-md"
-              />
-            </div>
-            <div>
-              <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">The Founder</p>
-              <h2 className="mb-2 font-serif text-3xl font-bold text-foreground">
-                <a href="https://gurudev.artofliving.org/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                  Gurudev Sri Sri Ravi Shankar
-                </a>
-              </h2>
-            </div>
-          </div>
+          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">The Founder</p>
+          <h2 className="mb-6 font-serif text-3xl font-bold text-foreground">
+            <a href="https://gurudev.artofliving.org/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+              Gurudev Sri Sri Ravi Shankar
+            </a>
+          </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Born in 1956 in Southern India, Gurudev was a prodigy — reciting portions of the{' '}
