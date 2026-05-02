@@ -25,15 +25,6 @@ const programs = [
     accent: 'bg-accent/10 border-accent/20',
     badge: 'Ages 5–18',
   },
-  {
-    href: '/free-intro',
-    label: 'FREE · NO COMMITMENT',
-    title: 'Free Session',
-    description:
-      'Attend a free introductory session before committing to any program. No fees, no obligation — just come and experience it yourself.',
-    accent: 'bg-green-50 border-green-200',
-    badge: 'Free',
-  },
 ];
 
 export default function Home() {
@@ -52,7 +43,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-1 lg:grid-cols-3">
+            <div className="grid gap-5 sm:grid-cols-2 lg:max-w-3xl lg:mx-auto">
               {programs.map((p) => (
                 <Link
                   key={p.href}
