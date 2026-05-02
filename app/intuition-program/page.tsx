@@ -118,7 +118,7 @@ export default async function IntuitionProgramPage() {
               <p className="mt-1 text-sm text-muted-foreground">
                 No problem! Call us at{' '}
                 <a href="tel:+918056046967" className="text-primary hover:underline">
-                  +91 80560 46967
+                  +91 8056046967
                 </a>{' '}
                 — we&apos;re here to help.
               </p>
