@@ -33,7 +33,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
     ],
     duration: '3 days',
     price: 2500,
-    youtube_video_ids: ['Ow84G4eIwzo', '4T8PV9gJSng', 'bAxjihqFMrw'],
+    youtube_video_ids: ['Ow84G4eIwzo', 'bAxjihqFMrw'],
     created_at: '',
     updated_at: '',
     batches: [
