@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { CENTRE } from '@/config/centre'
+import { LocalBusinessJsonLd } from '@/components/json-ld'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
@@ -40,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} bg-background`}>
       <body className="font-sans antialiased min-h-screen">
+        <LocalBusinessJsonLd />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
