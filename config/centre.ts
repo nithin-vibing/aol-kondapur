@@ -16,10 +16,10 @@ export const CENTRE = {
 
   // ── Contact ────────────────────────────────────────────────
   /** WhatsApp number in international format without +  (e.g. 919849377711) */
-  whatsapp: '919849377711',
+  whatsapp: '+918056046967',
 
   /** Display phone numbers — shown on the contact card */
-  phones: ['+91 98493 77711', '+91 98480 54746'],
+  phones: ['+91 8056046967', '+91 9849805889'],
 
   // ── Location ───────────────────────────────────────────────
   address: [
