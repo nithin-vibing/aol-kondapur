@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { WhatsAppCTA } from '@/components/whatsapp-cta';
 import { CENTRE } from '@/config/centre';
 
@@ -71,12 +72,25 @@ export function AboutSection() {
       {/* About Gurudev */}
       <section className="bg-background py-16">
         <div className="mx-auto max-w-2xl px-4 lg:max-w-3xl">
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">The Founder</p>
-          <h2 className="mb-6 font-serif text-3xl font-bold text-foreground">
-            <a href="https://gurudev.artofliving.org/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-              Gurudev Sri Sri Ravi Shankar
-            </a>
-          </h2>
+          <div className="mb-8 flex flex-col items-center gap-6 sm:flex-row sm:items-start">
+            <div className="shrink-0">
+              <Image
+                src="/gurudev.jpg"
+                alt="Gurudev Sri Sri Ravi Shankar"
+                width={200}
+                height={200}
+                className="rounded-2xl object-cover shadow-md"
+              />
+            </div>
+            <div>
+              <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">The Founder</p>
+              <h2 className="mb-2 font-serif text-3xl font-bold text-foreground">
+                <a href="https://gurudev.artofliving.org/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  Gurudev Sri Sri Ravi Shankar
+                </a>
+              </h2>
+            </div>
+          </div>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Born in 1956 in Southern India, Gurudev was a prodigy — reciting portions of the{' '}
