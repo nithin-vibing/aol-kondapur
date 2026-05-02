@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { CENTRE } from '@/config/centre';
-import { YouTubeEmbed } from '@/components/youtube-embed';
+import { VideoCarousel } from '@/components/video-carousel';
 import { BenefitsList } from '@/components/benefits-list';
 import { BatchCard } from '@/components/batch-card';
 import { WhatsAppCTA } from '@/components/whatsapp-cta';
@@ -135,8 +135,8 @@ export function IntuitionProcessSection({ program }: IntuitionProcessSectionProp
 
           {/* Video + Benefits — second on mobile */}
           <div className="order-last lg:order-first space-y-8">
-            {program.youtube_video_id && (
-              <YouTubeEmbed videoId={program.youtube_video_id} title={program.name} />
+            {program.youtube_video_ids.length > 0 && (
+              <VideoCarousel videoIds={program.youtube_video_ids} title={program.name} aspect="landscape" />
             )}
             {program.benefits && program.benefits.length > 0 && (
               <div className="space-y-3">

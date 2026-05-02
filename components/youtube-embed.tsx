@@ -6,16 +6,18 @@ import { Play } from 'lucide-react';
 interface YouTubeEmbedProps {
   videoId: string;
   title?: string;
+  aspect?: 'landscape' | 'vertical';
 }
 
-export function YouTubeEmbed({ videoId, title = 'Video' }: YouTubeEmbedProps) {
+export function YouTubeEmbed({ videoId, title = 'Video', aspect = 'landscape' }: YouTubeEmbedProps) {
+  const aspectClass = aspect === 'vertical' ? 'aspect-[9/16]' : 'aspect-video';
   const [isPlaying, setIsPlaying] = useState(false);
 
   const [thumbSrc, setThumbSrc] = useState(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
 
   if (isPlaying) {
     return (
-      <div className="relative aspect-video w-full overflow-hidden rounded-xl shadow-lg">
+      <div className={`relative ${aspectClass} w-full overflow-hidden rounded-xl shadow-lg`}>
         <iframe
           src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
           title={title}
@@ -30,7 +32,7 @@ export function YouTubeEmbed({ videoId, title = 'Video' }: YouTubeEmbedProps) {
   return (
     <button
       onClick={() => setIsPlaying(true)}
-      className="group relative aspect-video w-full overflow-hidden rounded-xl shadow-lg transition-transform hover:scale-[1.02]"
+      className={`group relative ${aspectClass} w-full overflow-hidden rounded-xl shadow-lg transition-transform hover:scale-[1.02]`}
       aria-label={`Play ${title}`}
     >
       <img

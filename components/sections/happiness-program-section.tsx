@@ -1,4 +1,4 @@
-import { YouTubeEmbed } from '@/components/youtube-embed';
+import { VideoCarousel } from '@/components/video-carousel';
 import { CENTRE } from '@/config/centre';
 import { BenefitsList } from '@/components/benefits-list';
 import { BatchCard } from '@/components/batch-card';
@@ -72,8 +72,10 @@ export function HappinessProgramSection({ program }: HappinessProgramSectionProp
 
           {/* Video + Benefits — order-last on mobile */}
           <div className="order-last lg:order-first space-y-8">
-            {program.youtube_video_id && (
-              <YouTubeEmbed videoId={program.youtube_video_id} title={program.name} />
+            {program.youtube_video_ids.length > 0 && (
+              <div className="mx-auto w-full max-w-[300px] sm:max-w-[340px]">
+                <VideoCarousel videoIds={program.youtube_video_ids} title={program.name} aspect="vertical" />
+              </div>
             )}
             {program.benefits && program.benefits.length > 0 && (
               <div className="space-y-3">

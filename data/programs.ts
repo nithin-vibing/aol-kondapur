@@ -33,7 +33,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
     ],
     duration: '3 days',
     price: 2500,
-    youtube_video_id: 'A27L9oknmic',
+    youtube_video_ids: ['Ow84G4eIwzo', '4T8PV9gJSng', 'bAxjihqFMrw'],
     created_at: '',
     updated_at: '',
     batches: [
@@ -94,7 +94,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
     ],
     duration: '2 days',
     price: 10000,
-    youtube_video_id: 'h_bq8gqWxyE', // ← just the ID from the YouTube URL, not the full link
+    youtube_video_ids: ['pLBMTOPLkAE', 'XPr-4P5y8xk', 'ySBwlJ2VNG4', 'guW_tLJiWJs', 'kNgp1cRE6Lw', 'hYUsPmgIckU', 'bO--mnnjhhk'],
     created_at: '',
     updated_at: '',
     batches: [

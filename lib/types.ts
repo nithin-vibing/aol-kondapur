@@ -7,7 +7,7 @@ export interface Program {
   benefits: string[] | null;
   duration: string | null;
   price: number | null;
-  youtube_video_id: string | null;
+  youtube_video_ids: string[];
   created_at: string;
   updated_at: string;
 }
