@@ -14,5 +14,5 @@ export function celebrate(url: string) {
   setTimeout(() => {
     if (newTab) newTab.location.href = url;
     else window.open(url, '_blank');
-  }, 1000);
+  }, 1200);
 }
