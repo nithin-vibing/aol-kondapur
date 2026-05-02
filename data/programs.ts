@@ -94,7 +94,7 @@ export const PROGRAMS: ProgramWithBatches[] = [
     ],
     duration: '2 days',
     price: 10000,
-    youtube_video_ids: ['pLBMTOPLkAE', 'XPr-4P5y8xk', 'ySBwlJ2VNG4', 'guW_tLJiWJs', 'kNgp1cRE6Lw', 'hYUsPmgIckU', 'bO--mnnjhhk'],
+    youtube_video_ids: ['pLBMTOPLkAE', 'XPr-4P5y8xk', 'hYUsPmgIckU', 'bO--mnnjhhk'],
     created_at: '',
     updated_at: '',
     batches: [
