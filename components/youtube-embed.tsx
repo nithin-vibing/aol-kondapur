@@ -12,8 +12,9 @@ interface YouTubeEmbedProps {
 export function YouTubeEmbed({ videoId, title = 'Video', aspect = 'landscape' }: YouTubeEmbedProps) {
   const aspectClass = aspect === 'vertical' ? 'aspect-[9/16]' : 'aspect-video';
   const [isPlaying, setIsPlaying] = useState(false);
-
-  const [thumbSrc, setThumbSrc] = useState(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
+  const thumbSizes = ['maxresdefault', 'hqdefault', 'sddefault', 'mqdefault'];
+  const [thumbIdx, setThumbIdx] = useState(0);
+  const thumbSrc = `https://img.youtube.com/vi/${videoId}/${thumbSizes[thumbIdx]}.jpg`;
 
   if (isPlaying) {
     return (
@@ -39,7 +40,7 @@ export function YouTubeEmbed({ videoId, title = 'Video', aspect = 'landscape' }:
         src={thumbSrc}
         alt={`${title} thumbnail`}
         className="h-full w-full object-cover"
-        onError={() => setThumbSrc(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`)}
+        onError={() => setThumbIdx((i) => Math.min(i + 1, thumbSizes.length - 1))}
       />
       <div className="absolute inset-0 flex items-center justify-center bg-foreground/20 transition-colors group-hover:bg-foreground/30">
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform group-hover:scale-110">
