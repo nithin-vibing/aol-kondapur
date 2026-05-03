@@ -4,32 +4,90 @@ import { useState } from 'react';
 import { CENTRE } from '@/config/centre';
 import { VideoCarousel } from '@/components/video-carousel';
 import { BenefitsList } from '@/components/benefits-list';
-import { BatchCard } from '@/components/batch-card';
 import { WhatsAppCTA } from '@/components/whatsapp-cta';
-import { ConfettiLink } from '@/components/confetti-link';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import type { ProgramWithBatches, Batch } from '@/lib/types';
+import type { ProgramWithBatches } from '@/lib/types';
 
-// Age groups matching actual Art of Living program structure
-const AGE_GROUPS = ['All', '5-8 years', '8-13 years', '13-18 years'] as const;
+const AGE_GROUPS = ['5-8 years', '8-13 years', '13-18 years'] as const;
 type AgeGroup = typeof AGE_GROUPS[number];
 
-function groupBatchesByAgeGroup(batches: Batch[]): Record<AgeGroup, Batch[]> {
-  const groups: Record<AgeGroup, Batch[]> = {
-    'All': batches,
-    '5-8 years': [],
-    '8-13 years': [],
-    '13-18 years': [],
-  };
+interface ScheduleRow {
+  days: string;
+  format: string;
+  duration: string;
+}
 
-  for (const batch of batches) {
-    if (batch.age_group && batch.age_group in groups) {
-      groups[batch.age_group as AgeGroup].push(batch);
-    }
-  }
+const SCHEDULES: Record<AgeGroup, { duration: string; rows: ScheduleRow[] }> = {
+  '5-8 years': {
+    duration: '10 days',
+    rows: [
+      { days: 'Week 1: Fri – Sun', format: 'In-person', duration: '2 hrs/day' },
+      { days: 'Week 1: Mon – Sat', format: 'Online (Zoom)', duration: '15 mins/day' },
+      { days: 'Week 2: Sun', format: 'In-person', duration: '2 hours' },
+    ],
+  },
+  '8-13 years': {
+    duration: '17 days',
+    rows: [
+      { days: 'Week 1: Fri – Sun', format: 'In-person', duration: '2 hrs/day' },
+      { days: 'Week 1: Mon – Thu', format: 'Online (Zoom)', duration: '15 mins/day' },
+      { days: 'Week 2: Fri – Sun', format: 'In-person', duration: '2 hrs/day' },
+      { days: 'Week 2: Mon – Sat', format: 'Online (Zoom)', duration: '30 mins/day' },
+      { days: 'Week 3: Sun', format: 'In-person', duration: '2 hrs/day' },
+    ],
+  },
+  '13-18 years': {
+    duration: '17 days',
+    rows: [
+      { days: 'Week 1: Fri – Sun', format: 'In-person', duration: '2 hrs/day' },
+      { days: 'Week 1: Mon – Thu', format: 'Online (Zoom)', duration: '30 mins/day' },
+      { days: 'Week 2: Fri – Sun', format: 'In-person', duration: '2 hrs/day' },
+      { days: 'Week 2: Mon – Sat', format: 'Online (Zoom)', duration: '30 mins/day' },
+      { days: 'Week 3: Sun', format: 'In-person', duration: '2 hrs/day' },
+    ],
+  },
+};
 
-  return groups;
+const WA_MESSAGES: Record<AgeGroup, string> = {
+  '5-8 years': `Hi! I'm interested in the Intuition Program (Juniors, ages 5–8) at the ${CENTRE.neighbourhood} center. Can you share the upcoming batch dates?`,
+  '8-13 years': `Hi! I'm interested in the Intuition Program (Kids, ages 8–13) at the ${CENTRE.neighbourhood} center. Can you share the upcoming batch dates?`,
+  '13-18 years': `Hi! I'm interested in the Intuition Program (Teens, ages 13–18) at the ${CENTRE.neighbourhood} center. Can you share the upcoming batch dates?`,
+};
+
+function ScheduleTable({ group }: { group: AgeGroup }) {
+  const { duration, rows } = SCHEDULES[group];
+  return (
+    <div className="space-y-4">
+      <p className="text-sm text-muted-foreground">
+        Duration: <span className="font-medium text-foreground">{duration}</span>
+      </p>
+      <div className="overflow-hidden rounded-xl border border-border">
+        {/* Table header */}
+        <div className="grid grid-cols-3 bg-primary/10 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-foreground">
+          <span>Day(s)</span>
+          <span>Format</span>
+          <span>Duration</span>
+        </div>
+        {/* Table rows */}
+        {rows.map((row, i) => (
+          <div
+            key={i}
+            className={`grid grid-cols-3 px-4 py-3 text-sm ${i < rows.length - 1 ? 'border-b border-border' : ''} ${i % 2 === 1 ? 'bg-muted/30' : 'bg-background'}`}
+          >
+            <span className="text-foreground">{row.days}</span>
+            <span className="text-muted-foreground">{row.format}</span>
+            <span className="text-muted-foreground">{row.duration}</span>
+          </div>
+        ))}
+      </div>
+      <WhatsAppCTA
+        label="Enquire about Next Batch"
+        message={WA_MESSAGES[group]}
+        className="w-full"
+      />
+    </div>
+  );
 }
 
 interface IntuitionProcessSectionProps {
@@ -50,8 +108,6 @@ export function IntuitionProcessSection({ program }: IntuitionProcessSectionProp
     </section>
   );
 
-  const batchesByAge = groupBatchesByAgeGroup(program.batches);
-
   return (
     <section id="intuition-process" className="scroll-mt-20 bg-muted/30 py-16 sm:py-24">
       <div className="mx-auto max-w-2xl px-4 lg:max-w-5xl">
@@ -68,7 +124,7 @@ export function IntuitionProcessSection({ program }: IntuitionProcessSectionProp
           )}
         </div>
 
-        {/* Age group labels — helps parents identify instantly */}
+        {/* Age group labels */}
         <div className="mb-8 flex flex-wrap justify-center gap-2">
           <Badge variant="outline" className="text-sm">IP Junior: Ages 5 to 8 years</Badge>
           <Badge variant="outline" className="text-sm">IP Kids: Ages 8 to 13 years</Badge>
@@ -76,60 +132,23 @@ export function IntuitionProcessSection({ program }: IntuitionProcessSectionProp
         </div>
 
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* Batches — first on mobile */}
+          {/* Schedule — first on mobile */}
           <div className="order-first lg:order-last space-y-4">
-            <h3 className="font-semibold text-foreground text-lg">Upcoming Batches</h3>
-
-            {program.batches.length > 0 ? (
-              <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as AgeGroup)} className="w-full">
-                <TabsList className="grid w-full grid-cols-4">
-                  {AGE_GROUPS.map((group) => (
-                    <TabsTrigger key={group} value={group} className="text-xs sm:text-sm">
-                      {group === 'All' ? 'All' : group.replace(' years', '')}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
-
+            <h3 className="font-semibold text-foreground text-lg">Program Schedule</h3>
+            <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as AgeGroup)} className="w-full">
+              <TabsList className="grid w-full grid-cols-3">
                 {AGE_GROUPS.map((group) => (
-                  <TabsContent key={group} value={group} className="mt-4">
-                    {batchesByAge[group].length > 0 ? (
-                      <div className="space-y-4">
-                        <div className="grid gap-4">
-                          {batchesByAge[group].map((batch) => (
-                            <BatchCard key={batch.id} batch={batch} />
-                          ))}
-                        </div>
-                        <p className="text-center text-sm text-muted-foreground pt-2">
-                          Have questions?{' '}
-                          <ConfettiLink
-                            href={`https://wa.me/${CENTRE.whatsapp}?text=${encodeURIComponent(`Hi! I have a question about the Intuition Program at the ${CENTRE.neighbourhood} center.`)}`}
-                            className="text-primary underline-offset-4 hover:underline"
-                          >
-                            Chat with us on WhatsApp →
-                          </ConfettiLink>
-                        </p>
-                      </div>
-                    ) : (
-                      <div className="rounded-lg border border-dashed border-border bg-background p-8 text-center">
-                        <p className="mb-4 text-muted-foreground">
-                          No upcoming batches for this age group right now.
-                        </p>
-                        <WhatsAppCTA
-                          message={`Hi! I'm interested in the Intuition Program for ${group === 'All' ? 'my child' : `children aged ${group}`} at the ${CENTRE.neighbourhood} center. When is the next batch?`}
-                        />
-                      </div>
-                    )}
-                  </TabsContent>
+                  <TabsTrigger key={group} value={group} className="text-xs sm:text-sm">
+                    {group.replace(' years', '')}
+                  </TabsTrigger>
                 ))}
-              </Tabs>
-            ) : (
-              <div className="rounded-lg border border-dashed border-border p-8 text-center">
-                <p className="mb-4 text-muted-foreground">
-                  No upcoming batches right now. Join our WhatsApp group to be notified when the next batch opens.
-                </p>
-                <WhatsAppCTA message={`Hi! I'm interested in the Intuition Program for kids at the ${CENTRE.neighbourhood} center. When is the next batch?`} />
-              </div>
-            )}
+              </TabsList>
+              {AGE_GROUPS.map((group) => (
+                <TabsContent key={group} value={group} className="mt-4">
+                  <ScheduleTable group={group} />
+                </TabsContent>
+              ))}
+            </Tabs>
           </div>
 
           {/* Video + Benefits — second on mobile */}

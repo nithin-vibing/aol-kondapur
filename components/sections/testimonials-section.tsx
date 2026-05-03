@@ -93,9 +93,6 @@ export function TestimonialsSection({ defaultTab = 'adults' }: TestimonialsSecti
           </TabsContent>
         </Tabs>
 
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          Results may vary based on participation and practice.
-        </p>
       </div>
     </section>
   );
