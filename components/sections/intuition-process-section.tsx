@@ -70,16 +70,22 @@ function ScheduleTable({ group }: { group: AgeGroup }) {
           <span>Duration</span>
         </div>
         {/* Table rows */}
-        {rows.map((row, i) => (
-          <div
-            key={i}
-            className={`grid grid-cols-3 px-4 py-3 text-sm ${i < rows.length - 1 ? 'border-b border-border' : ''} ${i % 2 === 1 ? 'bg-muted/30' : 'bg-background'}`}
-          >
-            <span className="text-foreground">{row.days}</span>
-            <span className="text-muted-foreground">{row.format}</span>
-            <span className="text-muted-foreground">{row.duration}</span>
-          </div>
-        ))}
+        {rows.map((row, i) => {
+          const [week, days] = row.days.split(': ');
+          return (
+            <div
+              key={i}
+              className={`grid grid-cols-3 px-4 py-3 text-sm ${i < rows.length - 1 ? 'border-b border-border' : ''} ${i % 2 === 1 ? 'bg-muted/30' : 'bg-background'}`}
+            >
+              <span className="text-foreground">
+                <span className="block">{week}:</span>
+                <span className="block">{days}</span>
+              </span>
+              <span className="text-muted-foreground">{row.format}</span>
+              <span className="text-muted-foreground">{row.duration}</span>
+            </div>
+          );
+        })}
       </div>
       <WhatsAppCTA
         label="Enquire about Next Batch"
