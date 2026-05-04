@@ -19,12 +19,19 @@ export function HeroSection() {
           Practical wisdom from the world's largest wellness organisation.
         </p>
 
-        <div className="flex items-center justify-center gap-4 text-sm font-medium text-muted-foreground">
-          <span>45 years</span>
-          <span className="text-border">·</span>
-          <span>180+ countries</span>
-          <span className="text-border">·</span>
-          <span>80 crore+ lives touched</span>
+        <div className="grid grid-cols-3 gap-4 text-center">
+          <div>
+            <p className="font-serif text-2xl font-bold text-primary">45</p>
+            <p className="text-xs text-muted-foreground">years</p>
+          </div>
+          <div>
+            <p className="font-serif text-2xl font-bold text-primary">180+</p>
+            <p className="text-xs text-muted-foreground">countries</p>
+          </div>
+          <div>
+            <p className="font-serif text-2xl font-bold text-primary">80 Cr+</p>
+            <p className="text-xs text-muted-foreground">lives touched</p>
+          </div>
         </div>
 
         <div className="mt-8">
